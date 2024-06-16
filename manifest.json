@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Dark Mode",
+  "version": "1.0",
+  "description": "Dark Mode for webpages",
+  "browser_action": {
+    "default_title": "Dark Mode",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.com/*", "https://*.org/*"],
+      "js": ["content_scripts.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
